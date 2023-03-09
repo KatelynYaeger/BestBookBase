@@ -31,6 +31,12 @@ namespace BestBookBase
             _conn.Execute("UPDATE BOOKS SET Title = @title,ReviewScore = @reviewscore WHERE BookID = @id",
                 new { title = book.Title, reviewscore = book.ReviewScore, id = book.BookID });
         }
+
+        public void InsertBook(Book bookToInsert)
+        {
+            _conn.Execute("INSERT INTO books (Title, AuthorName, Genre, ReviewScore) Values (@title, @authorname, @genre, @reviewscore);",
+                new { title = bookToInsert.Title, bookToInsert.AuthorName, bookToInsert.Genre, bookToInsert.ReviewScore });
+        }
     }
 }
 

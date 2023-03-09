@@ -48,8 +48,23 @@ namespace BestBookBase.Controllers
             repo.UpdateBook(book);
 
             return RedirectToAction("ViewBook", new { id = book.BookID });
+        }
+
+        public IActionResult InsertBook()
+        {
+            var book = new Book();
+
+            return View(book);
 
         }
+
+        public IActionResult InsertBookToDatabase(Book bookToInsert)
+        {
+            repo.InsertBook(bookToInsert);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
 

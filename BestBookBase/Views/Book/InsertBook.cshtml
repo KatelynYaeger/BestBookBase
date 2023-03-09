@@ -1,0 +1,25 @@
+﻿@model Book
+<h2>Create a New Book</h2>
+@using (Html.BeginForm("InsertBookToDatabase", "Book", "Post"))
+{
+    <input asp-for="BookID" type="hidden" value="" />
+    <label asp-for="Title" class="control-label">Title</label>
+    <input type="text" name="Title" class="form-control" value="" />
+    <label asp-for="AuthorName" class="control-label">AuthorName</label>
+    <input type="text" name="AuthorName" class="form-control" value="" />
+    <label asp-for="Genre" class="control-label">Genre</label>
+    <input type="text" name="Genre" class="form-control" value="" />
+    <label asp-for="ReviewScore" class="control-label">ReviewScore</label>
+    <input type="number" step="0.5" name="ReviewScore" class="form-control" />
+    <!--<div class="form-group">-->
+    @*<label for="">Select a Category</label>
+        <select class="form-control" name="CategoryID" value="">
+            @foreach (var cat in Model.Categories)
+            {
+                <option value="@cat.CategoryID">@cat.CategoryID @cat.Name</option>
+            }
+        </select>*@
+    <!--</div>-->
+    <input type="submit" value="Create Book" class="btn btn-primary" />
+}
+

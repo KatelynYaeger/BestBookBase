@@ -2,6 +2,11 @@
 
 <h2>Books</h2>
 
+<div style="display: block">
+    <a href="/Book/InsertBook/">Create a New Book</a>
+</div>
+
+
 <table class="table">
     <tr>
         <th>BookID</th>
@@ -16,6 +21,7 @@
         <tr>
             <td><a href=/Book/ViewBook/@book.BookID>@book.BookID</a></td>
             @*<td>@book.BookID</td>*@
+            <td></td>
             <td>@book.Title</td>
             <td>@book.AuthorName</td>
             <td>@book.Genre</td>
