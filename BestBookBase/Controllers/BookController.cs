@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BestBookBase.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BestBookBase.Controllers
@@ -29,6 +30,26 @@ namespace BestBookBase.Controllers
             return View(book);
         }
 
+        public IActionResult UpdateBook(int id)
+        {
+            Book novel = repo.GetBooks(id);
+            
+            if (novel == null)
+            {
+                return View("ProductNotFound");
+            }
+
+            return View(novel);
+
+        }
+
+        public IActionResult UpdateBookToDatabase(Book book)
+        {
+            repo.UpdateBook(book);
+
+            return RedirectToAction("ViewBook", new { id = book.BookID });
+
+        }
     }
 }
 

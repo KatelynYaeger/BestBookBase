@@ -25,6 +25,12 @@ namespace BestBookBase
             return _conn.QuerySingle<Book>("SELECT * FROM BOOKS WHERE BOOKID = @id;",
                 new { id = id });
         }
+
+        public void UpdateBook(Book book)
+        {
+            _conn.Execute("UPDATE BOOKS SET Title = @title,ReviewScore = @reviewscore WHERE BookID = @id",
+                new { title = book.Title, reviewscore = book.ReviewScore, id = book.BookID });
+        }
     }
 }
 
