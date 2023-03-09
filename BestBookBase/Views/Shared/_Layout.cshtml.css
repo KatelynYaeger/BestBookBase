@@ -9,7 +9,7 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #1868a1;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -43,4 +43,5 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
 
