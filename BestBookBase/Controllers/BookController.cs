@@ -22,6 +22,13 @@ namespace BestBookBase.Controllers
             return View(books);
         }
 
+        public IActionResult ViewBook(int id)
+        {
+            var book = repo.GetBooks(id);
+
+            return View(book);
+        }
+
     }
 }
 

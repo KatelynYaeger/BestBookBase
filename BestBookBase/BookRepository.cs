@@ -19,6 +19,12 @@ namespace BestBookBase
         {
 			return _conn.Query<Book>("SELECT * FROM BOOKS;");
         }
+
+        public Book GetBooks(int id)
+        {
+            return _conn.QuerySingle<Book>("SELECT * FROM BOOKS WHERE BOOKID = @id;",
+                new { id = id });
+        }
     }
 }
 
