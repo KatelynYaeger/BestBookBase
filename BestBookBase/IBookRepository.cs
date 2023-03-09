@@ -9,6 +9,7 @@ namespace BestBookBase
 		public Book GetBooks(int id);
 		public void UpdateBook(Book book);
 		public void InsertBook(Book bookToInsert);
+		public void DeleteBook(Book book);
 
 	}
 

@@ -37,6 +37,12 @@ namespace BestBookBase
             _conn.Execute("INSERT INTO books (Title, AuthorName, Genre, ReviewScore) Values (@title, @authorname, @genre, @reviewscore);",
                 new { title = bookToInsert.Title, bookToInsert.AuthorName, bookToInsert.Genre, bookToInsert.ReviewScore });
         }
+
+        public void DeleteBook(Book book)
+        {
+            _conn.Execute("DELETE FROM BOOKS WHERE BOOKID = @id;",
+                new { id = book.BookID });
+        }
     }
 }
 
